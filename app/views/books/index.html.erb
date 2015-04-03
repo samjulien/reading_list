@@ -1,33 +1,41 @@
+<div class="row">
 <p id="notice"><%= notice %></p>
-
 <h1>Listing Books</h1>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Description</th>
-      <th>Amazon</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="row">
+  <div class="small-12 columns">
+      <form>
+        <div class="small-1 columns">
+          <label class="inline left">Search</label>
+        </div>
+        <div class="small-4 columns end">
+          <input type="text" value='<%= params[:keyword] %>' name='keyword' placeholder='Keyword' />
+        </div>
+      </form>
+  </div>  
+</div>
+<div class="row">
+  <%= link_to 'New Book', new_book_path, class: "button radius small" %>
+</div>
 
-  <tbody>
     <% @books.each do |book| %>
-      <tr class='<%= "finished" if book.finished? %>'>
-        <td><%= book.title %></td>
-        <td><%= book.author %></td>
-        <td><%= book.description %></td>
-        <td><%= book.amazon_id %></td>
-        <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="row">
+        <div class="small-12 columns">
+          <div class="small-2 columns">
+            <%= image_from_amazon(book.amazon_id) %>
+            <p><%= book.rating %>/10</p>
+          </div>
+          <div class="small-8 columns">
+            <p><%= link_to book.title, book %></p>
+            <p>Written by <%= book.author %></p>
+            <p><%= book.description %></p>
+          </div>
+          <div class="small-2 columns">
+            <p>Genres</p>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
 <br>
 
-<%= link_to 'New Book', new_book_path, class: "button small" %>

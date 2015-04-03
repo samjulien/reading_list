@@ -3,8 +3,8 @@ Book.destroy_all
 Book.create!([
 	{title: "Snowcrash",
 	 author: "Neil Stephenson",
-	 description: "Add later.",
-	 amazon_id: "1",
+	 description: "Only once in a great while does a writer come along who defies comparison—a writer so original he redefines the way we look at the world. Neal Stephenson is such a writer and Snow Crash is such a novel, weaving virtual reality, Sumerian myth, and just about everything in between with a cool, hip cybersensibility to bring us the gigathriller of the information age.",
+	 amazon_id: "0553380958",
 	 rating: 5,
 	 finished_on: 10.days.ago},
 	 {title: "Jayber Crow",
