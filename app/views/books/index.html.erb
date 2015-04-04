@@ -16,7 +16,7 @@
   </div>  
 </div>
 <div class="row">
-  <%= link_to 'New Book', new_book_path, class: "button radius small" %>
+  <%= link_to 'New Book', new_book_path, class: "button small" %>
 </div>
 
     <% @books.each do |book| %>
@@ -27,7 +27,7 @@
             <p><%= book.rating %>/10</p>
           </div>
           <div class="small-8 columns">
-            <p><%= link_to book.title, book %></p>
+            <p><%= link_to book.title, edit_book_path(book) %></p>
             <p>Written by <%= book.author %></p>
             <p><%= book.description %></p>
           </div>
