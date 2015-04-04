@@ -2,7 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $finishedColor: green;
+$vapor: #F6F6F6;
+$jet: #222222;
 
 .finished {
 	color: $finishedColor;
+}
+
+.bookRow {
+	background-color: $vapor;
+	color: $jet;
+	padding-top: 1em;
+}
+
+.row {
+	margin-bottom: 1em !important;
 }
