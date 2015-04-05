@@ -31,6 +31,9 @@
             <p><%= link_to book.title, edit_book_path(book) %></p>
             <p>Written by <%= book.author %></p>
             <p><%= book.description %></p>
+            <% book.genres.each do |genre| %>
+              <span class="label" style="margin-bottom: 1.5em"><%= genre.name %></span>
+            <% end %>
           </div>
         </div>
     <% end %>
@@ -38,9 +41,10 @@
     <div class="small-2 columns">
         <h3>Genres</h3>
         <ul>
-          <li class="label">Sci-Fi</li>
-          <li class="label">Historical Fiction</li>
-          <li class="label">Poetry</li>
+          <%= link_to "All", books_path, class: 'label' %>
+          <% @genres.each do |genre| %>
+          <%= link_to genre.name, books_path(filter: genre.name), class: 'label' %>
+          <% end %>
         </ul>
     </div>
   </div>
