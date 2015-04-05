@@ -21,29 +21,14 @@
 
   <div class="row">
     <div class="small-10 columns">
-      <% @books.each do |book| %>
-        <div class="row bookRow">
-          <div class="small-2 columns">
-            <%= image_from_amazon(book.amazon_id) %>
-            <p><%= book.rating %>/10</p>
-          </div>
-          <div class="small-8 columns end">
-            <p><%= link_to book.title, edit_book_path(book) %></p>
-            <p>Written by <%= book.author %></p>
-            <p><%= book.description %></p>
-            <% book.genres.each do |genre| %>
-              <span class="label" style="margin-bottom: 1.5em"><%= genre.name %></span>
-            <% end %>
-          </div>
-        </div>
-    <% end %>
+      <%= render @books %>
     </div>
     <div class="small-2 columns">
         <h3>Genres</h3>
         <ul>
           <%= link_to "All", books_path, class: 'label' %>
           <% @genres.each do |genre| %>
-          <%= link_to genre.name, books_path(filter: genre.name), class: 'label' %>
+            <%= link_to genre.name, books_path(filter: genre.name), class: 'label' %>
           <% end %>
         </ul>
     </div>

@@ -18,3 +18,12 @@ $jet: #222222;
 .row {
 	margin-bottom: 1em !important;
 }
+
+.label {
+	transition: background-color 300ms ease-out;
+
+	&:hover, :focus {
+		color: $vapor;
+		background-color: #007095;
+	}
+}
