@@ -16,7 +16,10 @@
   </div>  
 </div>
 <div class="row">
-  <%= link_to 'New Book', new_book_path, class: "button small" %>
+  <a href="#" class="button small" id="showForm">New Book Form</a>
+</div>
+<div class="row bookForm">
+  <%= render 'form' %>
 </div>
 
   <div class="row">

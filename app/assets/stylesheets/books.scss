@@ -13,10 +13,11 @@ $jet: #222222;
 	background-color: $vapor;
 	color: $jet;
 	padding-top: 1em;
+	margin-bottom: 1em !important;
 }
 
-.row {
-	margin-bottom: 1em !important;
+.bookForm {
+	display: none;
 }
 
 .label {

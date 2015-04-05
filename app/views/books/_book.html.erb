@@ -1,7 +1,7 @@
 <div class="row bookRow">
   <div class="small-2 columns">
     <%= image_from_amazon(book.amazon_id) %>
-    <p><%= book.rating %>/10</p>
+    <p><%= book.rating %>/5</p>
   </div>
   <div class="small-8 columns end">
     <p><%= link_to book.title, edit_book_path(book) %></p>
