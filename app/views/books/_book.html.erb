@@ -1,12 +1,13 @@
-<div class="row bookRow">
+<div class="row bookRow" data-book="<%= book.id %>">
   <div class="small-2 columns">
     <%= image_from_amazon(book.amazon_id) %>
-    <p><%= book.rating %>/5</p>
+    <p><b>Rating:</b> <%= book.rating %>/5</p>
   </div>
   <div class="small-8 columns end">
     <p><%= link_to book.title, edit_book_path(book) %></p>
-    <p>Written by <%= book.author %></p>
+    <p><i>Written by <%= book.author %></i></p>
     <p><%= book.description %></p>
+    <p><i><%= link_to "Delete Book", book, method: :delete, remote: true %></i></p>
     <% book.genres.each do |genre| %>
       <span class="label" style="margin-bottom: 1.5em"><%= genre.name %></span>
     <% end %>
