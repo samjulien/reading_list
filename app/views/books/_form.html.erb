@@ -1,4 +1,4 @@
-<%= form_for(@book || Book.new) do |f| %>
+<%= form_for(@book || Book.new, remote: (action_name == 'index')) do |f| %>
   <div class="row">
     <div class="small-1 columns">
       <%= f.label :title, class: "inline" %><br>

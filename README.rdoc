@@ -1,7 +1,5 @@
 == README
 
-(This app is still in progress. Should be done in a few days.)
-
 This is just a simple reading list app that follows along with Codeschool's[www.codeschool.com] Soup to Bits screencast for their second Rails course, except that I decided to use Foundation because I use Bootstrap everyday at my day job.
 
 To run, just use the standard <tt>bundle install</tt> and <tt>rake db:setup</tt>.

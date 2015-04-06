@@ -5,7 +5,7 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Book.includes(:genres).
-      search(params[:keyword]).filter(params[:filter])
+      search(params[:keyword]).filter(params[:filter]).order('updated_at desc')
     @genres = Genre.all
   end
 
@@ -22,6 +22,7 @@ class BooksController < ApplicationController
 
   # GET /books/1/edit
   def edit
+    @genres = Genre.all
   end
 
   # POST /books
@@ -31,8 +32,9 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.save
-        format.html { redirect_to @book, notice: 'Book was successfully created.' }
+        format.html { redirect_to action: :index }
         format.json { render :show, status: :created, location: @book }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @book.errors, status: :unprocessable_entity }
@@ -45,7 +47,7 @@ class BooksController < ApplicationController
   def update
     respond_to do |format|
       if @book.update(book_params)
-        format.html { redirect_to @book, notice: 'Book was successfully updated.' }
+        format.html { redirect_to action: :index }
         format.json { render :show, status: :ok, location: @book }
       else
         format.html { render :edit }
