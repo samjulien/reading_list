@@ -6,6 +6,6 @@ This is just a simple reading list app that follows along with Codeschool's[www.
 * Implemented edit action
 * Implemented remote destroy
 
-In the future, I'd like to implement the ability CRUD functions on the genres.
+In the future, I'd like to implement CRUD functions for the genres.
 
 To run, just use the standard <tt>bundle install</tt> and <tt>rake db:setup</tt>.
